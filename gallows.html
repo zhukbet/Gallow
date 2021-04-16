@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: cornflowerblue;
+        }
+        .Go {
+            position: absolute;
+            width: 30%;
+            height: 15%;
+            background-color: brown;
+            left: 35%;
+            top: 30%;
+            font-size: 200%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .Go.anim { 
+            display: none;
+        }
+        body.active {
+            background-color: coral;
+        }
+        .input_main{
+            position: absolute;
+            height: 45px;
+            width: 80%;
+          left: 10%;
+          font-size: 200%;
+        }
+        .current_word{
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            /* width: 12%; */
+            letter-spacing: 7px;
+            padding: 5px 15px;
+            border-radius: 10px;
+            height: 40px;
+            text-align: center;
+            background-color: chartreuse;
+            font-size: 120%;
+            opacity: 1;
+            transition: all .45s;
+        }
+        .current_word.anim {
+            opacity: 0;
+            top: -20%;
+        }
+        .current_laters{
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 22%;
+            font-size: 120%;
+            border-radius: 10px;
+            text-align: center;
+            background-color: tomato;
+            opacity: 1;
+            transition: all .45s;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .current_laters p {
+            flex:1  24%;
+        }
+        .current_laters.anim{
+            opacity: 0;
+            top: -20%;
+        }
+
+        .hp{
+            position: absolute;
+            z-index: 4;
+            background-color: rgb(247, 0, 255);
+            height: 40px;
+            width: 50px;
+            top: 21%;
+            left: 7%;
+            opacity: 1;
+            border-radius: 20px;
+            transition: all .45s;
+            color: white;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .hp.anim{
+            opacity: 0;
+            top: 40px;
+        }
+        .game_over{
+            position: absolute;
+            background: red; 
+            height: 51px;
+            width: 10%;
+            top: 9px;
+            right: 8%;
+            transition: all .55s;
+            opacity: 1;
+
+        }
+        .game_over.anim{
+            opacity: 0;
+        }
+        .youwin{
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            width: 40%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: yellow;
+            font-size: 7vw;
+            opacity: 1;
+            transition: all 1s;
+            
+        }
+        .youwin.anim{
+            opacity: 0;
+        }
+        .gamelost{
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            width: 40%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: yellow;
+            font-size: 7vw;
+            opacity: 1;
+            transition: all 1s;
+        }
+        .gamelost.anim{
+            opacity: 0;
+            
+        }
+        .newWord{
+        
+         position: absolute;
+         bottom: 20px;
+         left: 0;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+
+        
+         
+        }
+
+        .newWord input {
+            width: 80%;
+            height: 30px;
+        }
+        .footer_b{
+        background: red;
+        position: absolute;
+        width: 10%;
+        height: 35px;
+        bottom: 21px;
+        right: 9%;
+
+
+       }
+       
+    </style>
+    <title>Document</title>
+</head>
+<body class="active">
+
+<div class="ALLbutton anim">
+  <button class="Go">Go</button>  
+</div>
+<div class="input">
+ 
+</div>
+<div class="hp anim"></div>
+
+    <button  class="game_over anim">GAME OVER</button>
+
+<div class="div_all_results">
+
+<div class="current_word anim"></div>
+<div class="current_laters anim"></div>
+
+</div>
+
+<div class="youwin anim">YOU WIN!</div>
+<div class="gamelost anim">YOU LOST!</div>
+
+
+
+<div class="newWord"></div>
+<div class="butt_add"></div>
+
+
+<script src="./gallows.js"></script>
+</body>
+</html>

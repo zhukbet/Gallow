@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: cornflowerblue;
+            background: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
+
+
         }
         .Go {
             position: absolute;
@@ -17,6 +19,25 @@
             top: 30%;
             font-size: 200%;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    text-shadow: rgba(255,255,255,.5) 1px 1px, rgba(100,100,100,.3) 3px 7px 3px;
+    border-radius: 3px / 100%;
+    background-image:
+   linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%),
+   linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 90%, rgba(255,255,255,.3)),
+   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5)),
+   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5));
+  background-repeat: no-repeat;
+  background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;
+  background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+  box-shadow: rgba(0,0,0,.5) 3px 10px 10px -10px;
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
+  
+        }
+        .Go:hover{
+            color: white;
         }
         .Go.anim { 
             display: none;
@@ -30,6 +51,10 @@
             width: 80%;
           left: 10%;
           font-size: 200%;
+      
+          border:solid 7px #41403E;
+
+
         }
         .current_word{
             position: absolute;
@@ -94,14 +119,34 @@
         .game_over{
             position: absolute;
             background: red; 
-            height: 51px;
+            height: 45px;
             width: 10%;
             top: 9px;
             right: 8%;
             transition: all .55s;
             opacity: 1;
 
+
+
+            text-shadow: 0 -1px rgba(0,0,0,.5);
+  
+  
+  border: 1px solid rgb(80,32,0);
+  border-radius: 5px;
+ 
+  background: rgb(147,80,36) linear-gradient(rgb(212, 44, 14), rgb(175, 14, 8) 80%);
+  box-shadow:
+   0 6px rgb(86,38,6),
+   0 3px 15px rgba(0,0,0,.4),
+   inset 0 1px rgba(255,255,255,.3),
+   inset 0 0 3px rgba(255,255,255,.5);
+
+
         }
+        .game_over:hover{
+            color: white;
+        }
+
         .game_over.anim{
             opacity: 0;
         }
@@ -118,6 +163,10 @@
             font-size: 7vw;
             opacity: 1;
             transition: all 1s;
+            color: white;
+             background-image: url('https://1.bp.blogspot.com/-seD8OoS-uPk/UM21FrMLBnI/AAAAAAAACaA/j4P3lYiwhk8/s640/x_8db3609d.jpg');
+
+            
             
         }
         .youwin.anim{
@@ -132,10 +181,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: yellow;
+            background: rgb(161, 161, 84);
             font-size: 7vw;
             opacity: 1;
             transition: all 1s;
+            background-image: linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255,255,255,.7) 0%, rgba(255,255,255,.5) 50%, rgba(0,0,0,0) 50%);
         }
         .gamelost.anim{
             opacity: 0;
@@ -157,15 +207,28 @@
         .newWord input {
             width: 80%;
             height: 30px;
+    border: 5px solid rgba(3, 3, 3, 0.5);
+    background: rgba(255, 255, 255, .5);
+        font-size: 20px;
+
+ 
         }
         .footer_b{
         background: red;
         position: absolute;
         width: 10%;
-        height: 35px;
+        height: 40px;
         bottom: 21px;
         right: 9%;
 
+
+         border: .5em solid rgba(0,0,0,0);
+ 
+    background: rgb(245,245,245) linear-gradient(rgb(245,245,245), rgb(188,192,193)) 50% 50% / calc(1.5em + .5em*2) calc(1.5em + .5em*2);
+    box-shadow:
+    inset 0 -3px 10px rgb(2, 39, 252),
+    inset 0 3px 10px rgba(0,0,0,.4),
+    0 2px 4px rgba(0,0,0,.9);
 
        }
        

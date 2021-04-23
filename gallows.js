@@ -36,7 +36,7 @@ const newGame = word => ({
     word,
     arr_world: word_arr(word),
     wordLength: word.length,
-    coorect_answer: ['a', 's', 'c'],
+    coorect_answer: [],
     hp: lifes()
 })
 
@@ -131,7 +131,7 @@ hp.innerHTML=game[getLG()].hp+" HP"
 
 const win=()=>{
    
-       console.log("YOU WIN")
+    
 
 
 youwin.classList.remove('anim')
@@ -147,6 +147,7 @@ const anim_add = () =>{
     hp.classList.add('anim')
     youwin.classList.add('anim')
     input.innerHTML=""
+    document.body.classList.add("active")
    setTimeout(()=>{add_or_remove_Go(true); grenInp(true)}, 1700)
     
 }
@@ -164,7 +165,7 @@ gamelost.classList.add("anim")
 const green=document.querySelector(".newWord") 
 const grenInp=isBool=>{ 
 
-    green.innerHTML= isBool ? `<input type="text"  class="add_word"> ` : '' 
+    green.innerHTML= isBool ? `<input type="text" placeholder="Please Add a word" class="add_word"> ` : '' 
 
 
 const b =   document.querySelector('.butt_add')
@@ -187,8 +188,6 @@ document.querySelector(".footer_b")?.addEventListener("click",(e)=>{
 
 let is_havent_Num_= true
     for(const latter of v){
-
-
                if(
                    +latter||
                    +latter===0 ||
